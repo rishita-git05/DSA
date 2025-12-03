@@ -1,3 +1,5 @@
+package Course.Functions;
+
 import java.util.Scanner;
 
 public class BinomialCoefficient 
