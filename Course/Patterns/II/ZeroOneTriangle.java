@@ -13,7 +13,6 @@ public class ZeroOneTriangle
 {
     static void zeroOne(int rows)
     {
-        int i = 0;
         for(int r = 1; r <= rows; r++)
         {
             for(int c = 1; c <= r; c++)
