@@ -29,10 +29,6 @@ public class Diamond
             {
                 System.out.print("*");
             }
-            for(int c = 1; c <= n - r; c++)
-            {
-                System.out.print(" ");
-            }
             System.out.println();
         }
         for(int r = n - 1; r >= 1; r--)
@@ -44,10 +40,6 @@ public class Diamond
             for(int c = 1; c <= 2*r - 1; c++)
             {
                 System.out.print("*");
-            }
-            for(int c = 1; c <= n - r; c++)
-            {
-                System.out.print(" ");
             }
             System.out.println();
         }
