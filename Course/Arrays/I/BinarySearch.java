@@ -17,10 +17,10 @@ public class BinarySearch
         int start = 0, end = n - 1;
         while(start <= end)
         {
-            int mid = start + (end - start) / 2;
+            int mid = (start + end) / 2;
             if(arr[mid] == target)
             {
-                System.out.println(mid);
+                System.out.println("Found at index : " + mid);
                 return;
             }
             else if(arr[mid] < target)
