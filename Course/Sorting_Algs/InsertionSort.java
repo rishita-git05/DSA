@@ -12,13 +12,29 @@ public class InsertionSort
         {
             arr[i] = sc.nextInt();
         }
-
-        for(int i = 0; i < n; i++)
+        /* 5 4 1 3 2
+           4 5 1 3 2
+           1 4 5 3 2
+           1 3 4 5 2
+           1 2 3 4 5
+        */
+        for(int i = 1; i < n; i++)
         {
-            for(int j = 0; j < i + 1; j++)
+            int prev = i - 1;
+            int curr = arr[i];
+            while(prev >= 0 && curr < arr[prev])
             {
-                
+                arr[prev+1] = arr[prev];
+                prev--;
             }
+            arr[prev+1] = curr;
         }
+
+        for(int i = 0; i < arr.length; i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+        sc.close();
     }    
 }
