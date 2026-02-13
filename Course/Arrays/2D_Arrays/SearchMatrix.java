@@ -34,27 +34,47 @@ public class SearchMatrix
         // System.out.println("Not found");
 
         //Using Binary Search on each row O(n log n)
-        for(int r = 0; r < rows; r++)
+        // for(int r = 0; r < rows; r++)
+        // {
+        //     int low = 0, high = cols - 1;
+
+        //     while(low <= high)
+        //     {
+        //         int mid = (low + high) / 2;
+
+        //         if(matrix[r][mid] == key)
+        //         {
+        //             System.out.println("Found at (" + r + ", " + mid + ")");
+        //             return;
+        //         }
+        //         else if(matrix[r][mid] < key)
+        //         {
+        //             low = mid + 1;
+        //         }
+        //         else
+        //         {
+        //             high = mid - 1;
+        //         }
+        //     }
+        // }
+        // System.out.println("Not found.");
+
+        //Using staircase method O(n+m)
+        int row = 0, col = cols - 1;
+        while(row < rows && col >= 0)
         {
-            int low = 0, high = cols - 1;
-
-            while(low <= high)
+            if(matrix[row][col] == key)
             {
-                int mid = (low + high) / 2;
-
-                if(matrix[r][mid] == key)
-                {
-                    System.out.println("Found at (" + r + ", " + mid + ")");
-                    return;
-                }
-                else if(matrix[r][mid] < key)
-                {
-                    low = mid + 1;
-                }
-                else
-                {
-                    high = mid - 1;
-                }
+                System.out.println("Found at (" + row + ", " + col + ")");
+                return;
+            }
+            else if(matrix[row][col] > key)
+            {
+                col--;
+            }
+            else
+            {
+                row++;
             }
         }
         System.out.println("Not found.");
