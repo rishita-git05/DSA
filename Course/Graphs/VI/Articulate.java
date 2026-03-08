@@ -2,6 +2,8 @@ import java.util.*;
 
 public class Articulate 
 {
+    static int time = 0;
+
     static class Edge
     {
         int s;
@@ -13,11 +15,12 @@ public class Articulate
         }
     }
 
-    public static void dfs(ArrayList<ArrayList<Edge>> graph, int curr, int parent, int[] dt, int[] low, int time, boolean[] vis)
+    public static void dfs(ArrayList<ArrayList<Edge>> graph, int curr, int parent, int[] disc, int[] low, boolean[] vis, boolean[] ap)
     {
-        vis[curr] = true;
-        dt[curr] = low[curr] = ++time;
         int children = 0;
+        disc[curr] = low[curr] = ++time;
+
+        vis[curr] = true;
 
         for(int i = 0; i < graph.get(curr).size(); i++)
         {
@@ -30,39 +33,46 @@ public class Articulate
             }
             else if(vis[neighbor])
             {
-                low[curr] = Math.min(low[curr], dt[neighbor]);
+                low[curr] = Math.min(low[curr], disc[neighbor]);
             }
             else
             {
-                dfs(graph, neighbor, curr, dt, low, time, vis);
+                dfs(graph, neighbor, curr, disc, low, vis, ap);
                 low[curr] = Math.min(low[curr], low[neighbor]);
 
-                if(parent != -1 && low[neighbor] >= dt[curr])
+                if(parent != -1 && low[neighbor] >= disc[curr])
                 {
-                    System.out.println("Ap: " + curr);
+                    ap[curr] = true;
                 }
                 children++;
             }
         }
-
-        if(parent != -1 && children > 1)
+        if(parent == -1 && children > 1)
         {
-            System.out.println("Ap: " + curr);
+            ap[curr] = true; 
         }
     }
 
     public static void getAP(ArrayList<ArrayList<Edge>> graph, int V)
     {
-        int[] dt = new int[V];
+        int[] disc = new int[V];
         int[] low = new int[V];
-        int time = 0;
         boolean[] vis = new boolean[V];
+        boolean[] ap = new boolean[V];
 
         for(int i = 0; i < V; i++)
         {
             if(!vis[i])
             {
-                dfs(graph, i, -1, dt, low, time, vis);
+                dfs(graph, i, -1, disc, low, vis, ap);
+            }
+        }
+
+        for(int i = 0; i < V; i++)
+        {
+            if(ap[i])
+            {
+                System.out.println("Articulation point: " + i);
             }
         }
     }
@@ -85,6 +95,7 @@ public class Articulate
             int d = sc.nextInt();
 
             graph.get(s).add(new Edge(s, d));
+            graph.get(d).add(new Edge(d, s));
         }
 
         getAP(graph, V);
