@@ -10,6 +10,7 @@ public class Occurrence
             return i;
         return firstOccurrence(key, arr, i + 1);
     }
+
     static int lastOccurrence(int key, int[] arr, int i)
     {
         if(i == arr.length)
@@ -22,6 +23,18 @@ public class Occurrence
         return isFound;
     }
 
+    static void allOccurrences(int key, int[] arr, int i)
+    {
+        if(i == arr.length)
+            return;
+
+        if(arr[i] == key)
+        {
+            System.out.print(i + " ");
+        }
+        allOccurrences(key, arr, i + 1);
+    }
+
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
@@ -32,5 +45,8 @@ public class Occurrence
         int k = sc.nextInt();
         System.out.println("First occurrence: " + firstOccurrence(k, arr, 0));
         System.out.println("Last occurrence: " + lastOccurrence(k, arr, 0));
+        System.out.print("All coccurences: ");
+        allOccurrences(k, arr, 0);
+        sc.close();
     }
 }
