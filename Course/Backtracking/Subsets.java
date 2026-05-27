@@ -1,4 +1,3 @@
-package Course.Backtracking;
 import java.util.*;
 
 public class Subsets 

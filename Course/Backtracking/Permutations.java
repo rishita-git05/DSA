@@ -1,4 +1,3 @@
-package Course.Backtracking;
 import java.util.*;
 
 public class Permutations 
@@ -16,9 +15,9 @@ public class Permutations
         {
             char curr = s.charAt(i);
             // "abcde" -> "ab" + "de"
-            String news = s.substring(0, i) + s.substring(i + 1);
+            String new_s = s.substring(0, i) + s.substring(i + 1);
             // abde, ""+a
-            permute(news, ans+curr);
+            permute(new_s, ans+curr);
         }
     }
     public static void main(String[] args)
