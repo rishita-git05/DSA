@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Sudoku 
 {
     static boolean isSafe(int[][] sudoku, int row, int col, int digit)
@@ -84,7 +82,6 @@ public class Sudoku
     }
     public static void main(String[] args) 
     {
-        Scanner sc = new Scanner(System.in);
         int[][] sudoku = {
             {0, 0, 8, 0, 0, 0, 0, 0, 0},
             {4, 9, 0, 1, 5, 7, 0, 0, 2},

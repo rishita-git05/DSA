@@ -22,5 +22,6 @@ public class Swap
         System.out.println(list);
         swap(list, i1, i2);
         System.out.println(list);
+        sc.close();
     }    
 }

@@ -1,4 +1,3 @@
-package Course.Strings;
 import java.util.*;
 
 public class LexLargest 
@@ -24,5 +23,6 @@ public class LexLargest
             }
         }
         System.out.println(largest); // Jungkook
+        sc.close();
     }
 }

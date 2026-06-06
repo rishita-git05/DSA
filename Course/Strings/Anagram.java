@@ -1,4 +1,3 @@
-package Course.Strings;
 import java.util.*;
 
 public class Anagram 
@@ -33,6 +32,7 @@ public class Anagram
             }
         }
         System.out.println("Anagram");
+
         sc.close();
     }
 }

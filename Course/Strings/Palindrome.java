@@ -26,5 +26,6 @@ public class Palindrome
             }
         }
         System.out.println("Palindrome");
+        sc.close();
     }
 }
