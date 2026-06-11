@@ -13,7 +13,7 @@ public class LinkedList
     public static Node tail;
     static int size = 0;
 
-    static void addFirst(int data)
+    public void addFirst(int data)
     {
         Node newNode = new Node(data);
         size++;
@@ -27,7 +27,7 @@ public class LinkedList
         head = newNode;
     }
 
-    static void addLast(int data)
+    public void addLast(int data)
     {
         Node newNode = new Node(data);
         size++;
@@ -41,11 +41,21 @@ public class LinkedList
         tail = newNode;
     }
 
-    static void addPos(int data, int pos)
+    public void addPos(int data, int pos)
     {
+        if(pos < 0 || pos > size)
+        {
+            System.out.println("Invalid position.");
+            return;
+        }
         if(pos == 0)
         {
             addFirst(data);
+            return;
+        }
+        if(pos == size)
+        {
+            addLast(data);
             return;
         }
         Node newNode = new Node(data);
@@ -67,20 +77,28 @@ public class LinkedList
         temp.next = newNode;
     }
 
-    static int removeFirst()
+    public int removeFirst()
     {
         if(size == 0)
         {
             System.out.println("LL is empty.");
             return Integer.MIN_VALUE;
         }
+        else if(size == 1)
+        {
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        
         int val = head.data;
         head = head.next;
         size--;
         return val;
     }
 
-    static int removeLast()
+    public int removeLast()
     {
         if(size == 0)
         {
@@ -108,24 +126,26 @@ public class LinkedList
         return val;
     }
 
-    static void print()
+    public void print()
     {
         Node temp = head;
-        while(temp.next != null)
+        while(temp != null)
         {
             System.out.print(temp.data + "->");
+            temp = temp.next;
         }
-        System.out.print("null");
+        System.out.println("null");
     }
     public static void main(String[] args) 
     {
         LinkedList ll = new LinkedList();
-        addFirst(1);
-        addLast(3);
-        addPos(2,1);
-        removeFirst();
-        removeLast();
-        print();
-        search();    
+        ll.addFirst(1);
+        ll.addLast(3);
+        ll.print();
+        ll.addPos(2, 1);
+        ll.print();
+        ll.removeFirst();
+        ll.removeLast();
+        ll.print();  
     }
 }
