@@ -1,4 +1,4 @@
-package Course.Graphs;
+package Course.Graphs.I;
 
 import java.util.ArrayList;
 import java.util.Scanner;

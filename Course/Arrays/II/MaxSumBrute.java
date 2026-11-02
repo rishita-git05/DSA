@@ -29,5 +29,6 @@ public class MaxSumBrute
             }
         }
         System.out.println(max);
+        sc.close();
     }
 }

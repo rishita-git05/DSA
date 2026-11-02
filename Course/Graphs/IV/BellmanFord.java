@@ -70,6 +70,6 @@ public class BellmanFord
 
         bellmanFord(graph, 0, V);
 
-
+        sc.close();
     }
 }

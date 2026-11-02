@@ -1,3 +1,4 @@
+package Course.Strings;
 import java.util.*;
 
 public class Palindrome 

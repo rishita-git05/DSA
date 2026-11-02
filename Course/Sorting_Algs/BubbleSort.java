@@ -1,3 +1,4 @@
+package Course.Sorting_Algs;
 import java.util.Scanner;
 
 public class BubbleSort 

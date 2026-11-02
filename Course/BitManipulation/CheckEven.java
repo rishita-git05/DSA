@@ -1,3 +1,4 @@
+package Course.BitManipulation;
 import java.util.Scanner;
 
 public class CheckEven 

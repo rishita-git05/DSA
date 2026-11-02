@@ -31,5 +31,6 @@ public class MaxSumPrefix
             }
         }
         System.out.println(max);
+        sc.close();
     }
 }

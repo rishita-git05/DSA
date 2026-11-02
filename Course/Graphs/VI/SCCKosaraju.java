@@ -1,6 +1,5 @@
 package Course.Graphs.VI;
 import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
 
 public class SCCKosaraju 
 {

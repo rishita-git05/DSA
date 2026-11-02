@@ -1,3 +1,4 @@
+package Course.Graphs.I;
 import java.util.*;
 
 public class GraphImp 
@@ -42,6 +43,7 @@ public class GraphImp
                 System.out.print("(" + e.des + ", " + e.weight + ") ");
             }
             System.out.println();
+            sc.close();
         }
     }
 }
