@@ -8,6 +8,7 @@ public class Anagram
         Scanner sc = new Scanner(System.in);
         String s1 = sc.next();
         String s2 = sc.next();
+        sc.close();
 
         if(s1.length() != s2.length())
         {
@@ -33,7 +34,5 @@ public class Anagram
             }
         }
         System.out.println("Anagram");
-
-        sc.close();
     }
 }

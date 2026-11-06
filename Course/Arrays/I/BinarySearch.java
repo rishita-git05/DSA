@@ -14,6 +14,7 @@ public class BinarySearch
             arr[i] = sc.nextInt();
         }
         int target = sc.nextInt();
+        sc.close();
         int start = 0, end = n - 1;
         while(start <= end)
         {
@@ -33,6 +34,5 @@ public class BinarySearch
             }
         }
         System.out.println("Not Found");
-        sc.close();
     }
 }

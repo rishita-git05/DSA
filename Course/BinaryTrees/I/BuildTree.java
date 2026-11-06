@@ -1,4 +1,4 @@
-package Course.BinaryTrees;
+package Course.BinaryTrees.I;
 
 public class BuildTree 
 {

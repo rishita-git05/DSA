@@ -7,6 +7,7 @@ public class Palindrome
     {
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
+        sc.close();
         // StringBuilder sb = new StringBuilder(str);
         // String rev = sb.reverse().toString();
         // if(str.equals(rev))
@@ -27,6 +28,5 @@ public class Palindrome
             }
         }
         System.out.println("Palindrome");
-        sc.close();
     }
 }

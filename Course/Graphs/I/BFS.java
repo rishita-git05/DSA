@@ -70,5 +70,6 @@ public class BFS
                 bfs(graph, visited, i);
             }
         }
+        sc.close();
     }
 }

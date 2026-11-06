@@ -28,5 +28,6 @@ public class Numbers
         printInc(n);
         System.out.println();
         printDec(n);
+        sc.close();
     }
 }

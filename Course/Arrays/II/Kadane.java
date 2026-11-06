@@ -1,3 +1,4 @@
+package Course.Arrays.II;
 import java.util.Scanner;
 
 public class Kadane 

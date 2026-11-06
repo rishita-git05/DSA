@@ -1,6 +1,6 @@
-package Course.BinaryTrees.TreeTraversals;
+package Course.BinaryTrees.I.TreeTraversals;
 
-import Course.BinaryTrees.BuildTree;
+import Course.BinaryTrees.I.BuildTree;
 
 public class Postorder 
 {
