@@ -2,7 +2,7 @@ package Course.BinaryTrees.I;
 
 public class HeightTree
 {
-    static int height(BuildTree.Node root)
+    public static int height(BuildTree.Node root)
     {
         if(root == null)
         {
